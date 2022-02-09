@@ -1,6 +1,7 @@
 import React from 'react'
+import './form.css';
 
-function Form(props) {
+function Form({ onChange }) {
     const inputRef = React.useRef();
     const textareaRef = React.useRef();
     const selectRef = React.useRef();
@@ -13,7 +14,7 @@ function Form(props) {
             [textareaHTMLElement.name]: textareaHTMLElement.value,
             [selectHTMLElement.name]: selectHTMLElement.value,
         }
-        console.log(data);
+        onChange(data);
     }
     return (
         <form onChange={handleChange}>
